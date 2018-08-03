@@ -1,15 +1,22 @@
 body {
   margin: 0 auto;
   background: linear-gradient(to right, #ffe9e9, #cff0ff);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 30px auto 3fr 100px 30px;
+  grid-template-columns: 0.2fr 8fr 4fr 4fr 0.2fr;
+  grid-template-rows: 50px 0.4fr 20px 2.3fr 0.3fr 20px 50px;
   grid-template-areas:
-    "header     header  header"
-    "logo       nav     nav"
-    "main       main    aside"
-    "main       main    filler_button"
-    "footer     footer  footer";
+    "header  header   header  header         header"
+    ".       logo     nav     nav            ."
+    ".       .        .       .              ."
+    ".       main     main    aside          ."
+    ".       main     main    filler_button  ."
+    ".       .        .       .              ."
+    "footer  footer   footer  footer         footer";
 }
 
 header {
@@ -94,15 +101,27 @@ nav li a:hover:not(.active)::after {
 
 main {
   grid-area: main;
+  background-color: aquamarine;
+  padding: 0;
+  margin: 0;
+}
+
+main img {
+  background-size: cover;
+  max-width: 100%;
+  max-height: 98%;
+  height: auto;
 }
 
 aside {
   grid-area: aside;
   max-width: 600px;
+  max-height: 600px;
   padding: 1em 2em;
-  margin: 0 15px 0 15px;
+  margin: 0 15px;
   background: #ffe9e9;
   text-align: center;
+  align-self: center;
   box-shadow: 0 0 20px 0 #00000016;
 }
 
@@ -111,6 +130,14 @@ aside form {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
+}
+
+aside form p {
+  margin: 0 auto;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #707070;
+  font-size: 1.25rem;
 }
 
 aside form input,
@@ -137,33 +164,48 @@ aside form textarea {
   height: 35px;
   border: 0;
   box-shadow: 0 0 20px 0 #00000016;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #fff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.submit_button:hover,
+.submit_button:focus {
+  cursor: pointer;
+  background: #8cd8fb;
 }
 /*END FORM STYLES*/
 
-.filler_button {
+.filler_button_div {
   grid-area: filler_button;
+  background-color: aquamarine;
   max-width: 600px;
   text-align: center;
   display: grid;
   align-items: end;
 }
 
-.filler_button button {
+.filler_button_div button {
   height: 60px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border: 0;
-  margin: 0 1em;
+  margin: 0 15px;
   background: #55add5;
   box-shadow: 0 0 20px 0 #00000016;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #fff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.filler_button_div button:hover,
+.filler_button_div button:focus {
+  cursor: pointer;
+  background: #8cd8fb;
 }
 
 footer {
   grid-area: footer;
+  width: 100%;
   background: #00000020;
   text-align: center;
-  width: 100%;
 }
