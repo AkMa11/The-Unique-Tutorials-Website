@@ -76,7 +76,7 @@ nav li a {
 }
 
 nav li a:hover:not(.active) {
-  background-color:  
+  background-color: white;
   opacity: 1;
 }
 
