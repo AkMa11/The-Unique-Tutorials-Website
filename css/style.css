@@ -4,18 +4,18 @@ body {
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
   display: grid;
-  grid-template-columns: 1% auto 20% 20% 1%;
-  grid-template-rows: 3% 10% auto 10% 3%;
+  grid-template-columns: 1% auto 1%;
+  grid-template-rows: 3% 10% 10% auto auto auto 3%;
   grid-gap: 1em;
   grid-template-areas:
-    "header  header   header  header         header"
-    ".       logo     nav     nav            ."
-    ".       main     main    aside          ."
-    ".       main     main    filler_button  ."
-    "footer  footer   footer  footer         footer";
+    "header  header         header "
+    ".       logo           ."
+    "nav     nav            nav"
+    ".       main           ."
+    ".       aside          ."
+    ".       filler_button  ."
+    "footer  footer         footer";
 }
 
 header {
@@ -30,9 +30,8 @@ h1 {
 
 h4 {
   margin: 0 auto;
-  padding: 5px 0 0 0;
   font-weight: 500;
-  font-size: 0.8vw;
+  font-size: 0.5em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #707070;
 }
@@ -44,7 +43,7 @@ h4 {
 
 .logo img {
   width: auto;
-  height: 100%;
+  height: 50px;
 }
 
 nav {
@@ -68,7 +67,7 @@ nav li {
 }
 
 nav li a {
-  font-size: 0.9vw;
+  font-size: 0.5em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #707070;
   text-align: center;
@@ -100,6 +99,9 @@ nav li a:hover:not(.active)::after {
 
 main {
   grid-area: main;
+  display: grid;
+  justify-items: center;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -107,15 +109,13 @@ main {
 main img {
   background-size: cover;
   max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  border: 0;
+  max-height: 100vh;
+  border-radius: 10px;
   box-shadow: 0 0 20px 0 #00000016;
 }
 
 aside {
   grid-area: aside;
-  /* background-color: aqua; */
   display: grid;
   align-items: center;
   text-align: center;
@@ -126,8 +126,8 @@ aside form {
   display: grid;
   background: #ffe9e9;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
-  padding: 2em 2em;
+  grid-gap: 10px;
+  padding: 1em 1em;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 #00000016;
 }
@@ -137,39 +137,39 @@ aside form p {
   font-weight: 500;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #707070;
-  font-size: 1.2vw;
+  font-size: 1em;
 }
 
 aside form input,
 aside form select {
-  font-size: 0.8vw;
+  font-size: 0.5em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 3.5vh;
+  height: 4vh;
   border: 0;
   padding: 0 0 0 20px;
   box-shadow: 0 0 20px 0 #00000016;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 aside form textarea {
   resize: none;
-  font-size: 0.8vw;
+  font-size: 0.5em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 10vh;
   border: 0;
   padding: 5px 0 0 20px;
   box-shadow: 0 0 20px 0 #00000016;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .submit_button {
   background: #55add5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 3.5vh;
+  height: 4vh;
   border: 0;
   box-shadow: 0 0 20px 0 #00000016;
-  border-radius: 10px;
-  font-size: 1vw;
+  border-radius: 5px;
+  font-size: 1em;
   color: #fff;
   box-shadow: 0 0 20px 0 #00000016;
   transition: background-color 0.5s ease-in-out;
@@ -188,14 +188,14 @@ aside form textarea {
 }
 
 .filler_button_div button {
-  height: 100%;
+  height: 6vh;
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border: 0;
   background: #55add5;
   box-shadow: 0 0 20px 0 #00000016;
-  border-radius: 10px;
-  font-size: 1.2vw;
+  border-radius: 5px;
+  font-size: 1em;
   color: #fff;
   transition: background-color 0.5s ease-in-out;
 }
@@ -211,4 +211,67 @@ footer {
   width: 100%;
   background: #00000020;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1% auto 20% 20% 1%;
+    grid-template-rows: 3% 10% auto 10% 3%;
+    grid-gap: 1em;
+    grid-template-areas:
+      "header  header   header  header         header"
+      ".       logo     nav     nav            ."
+      ".       main     main    aside          ."
+      ".       main     main    filler_button  ."
+      "footer  footer   footer  footer         footer";
+  }
+
+  h4 {
+    font-size: 0.8vw;
+  }
+
+  .logo img {
+    width: auto;
+    height: 100%;
+  }
+
+  nav li a {
+    font-size: 0.9vw;
+  }
+
+  main img {
+    background-size: cover;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  aside form {
+    grid-gap: 20px;
+    padding: 2em 2em;
+  }
+
+  aside form p {
+    font-size: 1.2vw;
+  }
+
+  aside form input,
+  aside form select {
+    font-size: 0.8vw;
+  }
+
+  aside form textarea {
+    font-size: 0.8vw;
+  }
+
+  .submit_button {
+    font-size: 1vw;
+  }
+
+  .filler_button_div button {
+    height: 100%;
+    border-radius: 10px;
+    font-size: 1.2vw;
+  }
 }
