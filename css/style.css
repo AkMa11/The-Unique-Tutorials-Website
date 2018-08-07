@@ -58,28 +58,25 @@ nav {
   text-align: center;
   border-top: 1px solid white;
   background-color: #00000010;
-  display: none;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 
-label {
+.nav_display_grid {
+  display: grid;
+  opacity: 1;
+  height: 100%;
+}
+
+.nav_button {
   display: grid;
   grid-area: menu;
   justify-content: end;
-  margin: 0 20px 0 0;
-  font-size: 26px;
-  color: #707070;
-  cursor: pointer;
-}
-
-#toggle {
-  display: none;
-}
-#toggle:checked + nav {
-  display: grid;
 }
 
 nav a {
-  font-size: 0.5em;
+  font-size: 0.8em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #707070;
   text-align: center;
@@ -265,6 +262,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     border-top: 0;
+    opacity: 1;
     background-color: transparent;
   }
 
@@ -272,9 +270,13 @@ footer {
     font-size: 0.9vw;
   }
 
-  label {
+  .nav_button {
     display: none;
   }
+
+  /* label {
+    display: none;
+  } */
 
   main img {
     background-size: cover;
