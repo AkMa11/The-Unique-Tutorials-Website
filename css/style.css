@@ -1,12 +1,12 @@
 body {
   margin: 0 auto;
-  background: linear-gradient(to right, #ffe9e9, #cff0ff);
+  background: linear-gradient(to bottom, #ffe9e9, #cff0ff);
 }
 
 .container {
   display: grid;
   grid-template-columns: 1% auto 1%;
-  grid-template-rows: 3% 10% 10% auto auto auto 3%;
+  grid-template-rows: 3% auto auto auto auto auto 3%;
   grid-gap: 1em;
   grid-template-areas:
     "header  header         header "
@@ -43,7 +43,7 @@ h4 {
 
 .logo img {
   width: auto;
-  height: 50px;
+  height: 70px;
 }
 
 /*NAV STYLES*/
@@ -151,9 +151,9 @@ aside form p {
 
 aside form input,
 aside form select {
-  font-size: 0.5em;
+  font-size: 0.6em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 4vh;
+  min-height: 30px;
   border: 0;
   padding: 0 0 0 20px;
   box-shadow: 0 0 20px 0 #00000016;
@@ -162,9 +162,9 @@ aside form select {
 
 aside form textarea {
   resize: none;
-  font-size: 0.5em;
+  font-size: 0.6em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 10vh;
+  min-height: 80px;
   border: 0;
   padding: 5px 0 0 20px;
   box-shadow: 0 0 20px 0 #00000016;
@@ -173,9 +173,9 @@ aside form textarea {
 
 aside form .selection {
   resize: none;
-  font-size: 0.5em;
+  font-size: 0.6em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 4vh;
+  height: 30px;
   border: 0;
   background-color: #fff;
   padding: 5px 0 0 20px;
@@ -186,7 +186,7 @@ aside form .selection {
 .submit_button {
   background: #55add5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 4vh;
+  min-height: 30px;
   border: 0;
   box-shadow: 0 0 20px 0 #00000016;
   border-radius: 5px;
@@ -209,7 +209,7 @@ aside form .selection {
 }
 
 .filler_button_div button {
-  height: 6vh;
+  height: 50px;
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border: 0;
@@ -235,6 +235,10 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
+  body {
+    background: linear-gradient(to right, #ffe9e9, #cff0ff);
+  }
+
   .container {
     height: 100vh;
     display: grid;
@@ -274,10 +278,6 @@ footer {
     display: none;
   }
 
-  /* label {
-    display: none;
-  } */
-
   main img {
     background-size: cover;
     max-width: 100%;
@@ -296,18 +296,22 @@ footer {
   aside form input,
   aside form select {
     font-size: 0.8vw;
+    height: 4vh;
   }
 
   aside form textarea {
     font-size: 0.8vw;
+    height: 10vh;
   }
 
   aside form .selection {
     font-size: 0.8vw;
+    height: 4vh;
   }
 
   .submit_button {
     font-size: 1vw;
+    height: 4vh;
   }
 
   .filler_button_div button {
