@@ -18,6 +18,69 @@ body {
     "footer  footer         footer";
 }
 
+/* Login Main */
+
+.login_container {
+  display: grid;
+  grid-template-columns: 1% auto 1%;
+  grid-template-rows: 3% auto auto auto 3%;
+  grid-gap: 1em;
+  grid-template-areas:
+    "header  header         header "
+    ".       logo           menu"
+    "nav     nav            nav"
+    ".       l_main         ."
+    "footer  footer         footer";
+}
+
+.login_main {
+  grid-area: l_main;
+  justify-self: center;
+  align-self: center;
+}
+
+.login_main form {
+  display: grid;
+  background: #ffffff20;
+  border-radius: 10px;
+  min-width: 300px;
+  grid-gap: 10px;
+  padding: 2em;
+  box-shadow: 0 0 20px 0 #00000016;
+  min-height: 90vh;
+  align-content: center;
+}
+
+.login_main input {
+  font-size: 0.6em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 30px;
+  border: 0;
+  padding: 0 0 0 20px;
+  box-shadow: 0 0 20px 0 #00000016;
+  border-radius: 5px;
+}
+
+.login_button {
+  background: #55add5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 30px;
+  border: 0;
+  box-shadow: 0 0 20px 0 #00000016;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #fff;
+  box-shadow: 0 0 20px 0 #00000016;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.login_button:hover,
+.login_button:focus {
+  cursor: pointer;
+  background: #8cd8fb;
+}
+/* Login Main End */
+
 header {
   grid-area: header;
   background: #00000020;
@@ -61,6 +124,7 @@ nav {
   height: 0;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  display: none;
 }
 
 .nav_display_grid {
@@ -85,8 +149,7 @@ nav a {
   text-decoration: none;
   background-color: none;
   border-bottom: 1px solid white;
-  transition: opacity 0.5s ease;
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 nav a:hover:not(.active) {
@@ -102,6 +165,7 @@ nav a:hover:not(.active)::after {
 .active {
   opacity: 1;
   font-weight: 500;
+  background-color: #ffffff70;
   border-bottom: 3px solid white;
 }
 /*END NAV STYLES*/
@@ -253,6 +317,40 @@ footer {
       "footer  footer   footer  footer         footer";
   }
 
+  /* LOGIN PAGE */
+
+  .login_container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1% auto 15% 25% 1%;
+    grid-template-rows: 3% 10% auto 3%;
+    grid-gap: 1em;
+    grid-template-areas:
+      "header  header   header  header         header"
+      ".       logo     nav     nav            ."
+      ".       l_main   l_main  l_main         ."
+      "footer  footer   footer  footer         footer";
+  }
+
+  .login_main input {
+    font-size: 0.8vw;
+    height: 4vh;
+  }
+
+  .login_main form {
+    min-width: 15vw;
+    min-height: 15vh;
+    grid-gap: 20px;
+    padding: 2em 2em;
+  }
+
+  .login_button {
+    font-size: 1vw;
+    height: 4vh;
+  }
+
+  /* LOGIN PAGE END */
+
   h4 {
     font-size: 0.8vw;
   }
@@ -272,6 +370,7 @@ footer {
 
   nav a {
     font-size: 0.9vw;
+    display: block;
   }
 
   .nav_button {

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="login_container">
         <header>
             <h4>Helpline and Admission Enquiry: 9999999999</h4>
         </header>
@@ -26,34 +26,18 @@
             </button>
         </div>
         <nav class="nav_display">
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="#" class="active">Login</a>
+            <a class="navA" href="index.html">Home</a>
+            <a class="navA" href="courses.html">Courses</a>
+            <a class="navA" href="about.html">About</a>
+            <a class="navA" href="contact.html">Contact</a>
+            <a class="navA active" href="#">Login</a>
         </nav>
-        <main>
-            <img class="image_web" src="./Assets/main_test1.png" alt="main">
-        </main>
-        <aside>
+        <div class="login_main">
             <form action="">
-                <p>Request a callback</p>
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="text" name="phnumber" placeholder="Contact number">
-                <select name="cars" class="selection">
-                    <option selected>Select a course</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                </select>
-                <textarea name="message" placeholder="Message"></textarea>
-                <button class="submit_button">Submit</button>
+                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Password">
+                <button class="login_button">Login</button>
             </form>
-        </aside>
-        <div class="filler_button_div">
-            <button>Click here to browse our courses</button>
         </div>
         <footer>
             <h4>&copy; The Unique Tutorials 2018 All rights reserved | Website developed by Amodh Naik</h4>
