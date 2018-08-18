@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  background: linear-gradient(to bottom, #ffe9e9, #cff0ff);
+  background: linear-gradient(to bottom, #ffe9e9, #cff0ff, #ffe9e9);
 }
 
 .container {
@@ -8,6 +8,7 @@ body {
   grid-template-columns: 1% auto 1%;
   grid-template-rows: 3% auto auto auto auto auto 3%;
   grid-gap: 1em;
+  height: 100vh;
   grid-template-areas:
     "header  header         header "
     ".       logo           menu"
@@ -25,6 +26,7 @@ body {
   grid-template-columns: 1% auto 1%;
   grid-template-rows: 3% auto auto auto 3%;
   grid-gap: 1em;
+  height: 100vh;
   grid-template-areas:
     "header  header         header "
     ".       logo           menu"
@@ -35,20 +37,19 @@ body {
 
 .login_main {
   grid-area: l_main;
-  justify-self: center;
-  align-self: center;
+  display: grid;
+  place-content: center;
+  height: 70vh;
 }
 
 .login_main form {
   display: grid;
   background: #ffffff20;
   border-radius: 10px;
-  width: 70vw;
+  width: 15rem;
   grid-gap: 10px;
   padding: 2em;
   box-shadow: 0 0 20px 0 #00000016;
-  height: 90vh;
-  align-content: center;
 }
 
 .login_main input {
@@ -112,8 +113,11 @@ body {
 
 header {
   grid-area: header;
+  display: grid;
+  place-content: center;
   background: #00000020;
   width: 100%;
+  padding: 0.2em 0;
   text-align: center;
 }
 h1 {
@@ -123,9 +127,13 @@ h1 {
 h4 {
   margin: 0 auto;
   font-weight: 500;
-  font-size: 0.5em;
+  font-size: 0.7em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #707070;
+}
+
+footer h4 {
+  font-size: 0.6em;
 }
 
 .logo {
@@ -191,7 +199,7 @@ nav a:hover:not(.active)::after {
   transition: background-color 1s ease-out;
 }
 
-.active {
+.active_nav {
   opacity: 1;
   font-weight: 500;
   background-color: #ffffff70;
@@ -311,6 +319,10 @@ aside form .selection {
 
 footer {
   grid-area: footer;
+  display: grid;
+  place-content: center;
+  height: 1.5em;
+  padding: 0.2em 0;
   width: 100%;
   background: #00000020;
   text-align: center;
@@ -359,8 +371,8 @@ footer {
 
   .login_main form {
     place-content: center;
-    min-width: 15vw;
-    min-height: 15vh;
+    width: 25vw;
+    height: 25vh;
     grid-gap: 20px;
     padding: 2em 2em;
   }
@@ -386,6 +398,9 @@ footer {
   /* Contact Main End */
 
   h4 {
+    font-size: 0.8vw;
+  }
+  footer h4 {
     font-size: 0.8vw;
   }
 
