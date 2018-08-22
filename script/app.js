@@ -9,7 +9,7 @@ var mainApp = {};
       // User is signed in.
       uid = user.uid;
       name = user.displayName;
-      document.getElementById("welcome").innerHTML = "Hello " + name + "!";
+      document.getElementById("welcome").innerHTML = name;
     } else {
       //redirect to login page
       uid = null;

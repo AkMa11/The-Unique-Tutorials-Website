@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Admin | The Unique Tutorials</title>
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+</head>
+
+<body>
+  <div class="admin_container">
+    <div class="admin_nav">
+      <p id="welcome"></p>
+      <div class="line"></div>
+      <div class="manageStudents_icon">
+        <img src="./Assets/btnManageStudents.png">
+      </div>
+      <button class="admin_button admin_button_manageStudents">Manage students</button>
+      <div class="uploadTestPapers_icon">
+        <img src="./Assets/btnTest.png">
+      </div>
+      <button class="admin_button admin_button_uploadTestPapers">Upload test papers</button>
+      <div class="logout_icon">
+        <img src="./Assets/btnLogout.png">
+      </div>
+      <button class="admin_button admin_button_logout" id="btnLogout" onclick="mainApp.logOut()">Logout</button>
+    </div>
+    <div class="admin_main">
+      <div class="all_students">
+        <p>All students</p>
+      </div>
+      <div class="update_students">
+        <p>Update student information</p>
+        <div class="a_m_u_s">
+          <div class="a_m_u_s_dp"></div>
+          <input type="text" id="studentName" placeholder="Name" required>
+          <input type="text" id="studentSchool" placeholder="School name">
+          <input type="text" id="studentBoard" placeholder="Board">
+          <input type="text" id="studentClass" placeholder="Class" required>
+          <input type="text" id="studentId" placeholder="ID" required>
+          <input type="text" id="studentPendingFee" placeholder="Pending fee">
+          <input type="email" id="studentEmail" placeholder="Email" required>
+          <input type="text" id="studentPassword" placeholder="Password" required>
+        </div>
+        <div class="a_m_u_s_buttons">
+          <button id="btnUploadPhoto">Upload photo</button>
+          <button id="btnAdd">Add</button>
+          <button id="btnUpdate">Update</button>
+          <button id="btnDelete">Delete</button>
+        </div>
+      </div>
+      <div class="grievance_redressal">
+        <p>Grievance redressal</p>
+      </div>
+    </div>
+    <footer>
+      <h4>&copy; The Unique Tutorials 2018 All rights reserved | Website developed by Amodh Naik</h4>
+    </footer>
+  </div>
+
+  <script src="./script/firebase.js"></script>
+  <script src="./script/app.js"></script>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>

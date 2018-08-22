@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   background: linear-gradient(to bottom, #ffe9e9, #cff0ff, #ffe9e9);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -49,7 +50,19 @@ body {
   width: 15rem;
   grid-gap: 10px;
   padding: 2em;
+  text-align: center;
   box-shadow: 0 0 20px 0 #00000016;
+}
+
+.login_main .form #errorMessage {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+  padding: 0.5em 0;
+  margin: -0.1em 0;
+  background-color: crimson;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 #00000016;
+  color: #f2f2f2;
 }
 
 .login_main input {
@@ -111,6 +124,233 @@ body {
 }
 
 /* Contact Main End */
+
+/* Admin page styles */
+
+.admin_container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 100vh;
+  grid-template-rows: 95vh 5vh;
+  grid-template-areas:
+    "admin_nav    admin_main"
+    "footer       footer";
+}
+
+.admin_nav {
+  grid-area: admin_nav;
+  background-color: #4b4b4b30;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 10% auto auto auto 1fr;
+  grid-template-areas:
+    "heading heading"
+    "separator separator"
+    "manageStudents_icon admin_button_manageStudents"
+    "uploadTestPapers_icon admin_button_uploadTestPapers"
+    "logout_icon admin_button_logout";
+}
+
+.admin_nav p {
+  grid-area: heading;
+  text-align: center;
+  color: #4b4b4b;
+  font-size: 1.3vw;
+}
+
+.line {
+  grid-area: separator;
+  border-bottom: #707070 1px solid;
+  margin: 0 2em;
+}
+
+.admin_button {
+  background-color: #00000000;
+  border: none;
+  height: 7vh;
+  font-size: 1vw;
+  text-align: left;
+  cursor: pointer;
+  color: #4b4b4b;
+  margin-top: 0.5em;
+  transition: all 0.5s ease-in-out;
+}
+
+.admin_button:hover,
+.admin_button:focus {
+  cursor: pointer;
+  padding-left: 1em;
+  background: #4b4b4b10;
+}
+
+.admin_nav .logout_icon {
+  grid-area: logout_icon;
+  display: grid;
+  place-content: center;
+  height: 7vh;
+  /* background-color: #4b4b4b10; */
+  margin-top: 0.5em;
+}
+
+.admin_button_logout {
+  grid-area: admin_button_logout;
+}
+
+.admin_nav .manageStudents_icon {
+  grid-area: manageStudents_icon;
+  display: grid;
+  place-content: center;
+  height: 7vh;
+  /* background-color: #4b4b4b10; */
+  margin-top: 0.5em;
+}
+
+.admin_button_manageStudents {
+  grid-area: admin_button_manageStudents;
+}
+
+.admin_nav .uploadTestPapers_icon {
+  grid-area: uploadTestPapers_icon;
+  display: grid;
+  place-content: center;
+  height: 7vh;
+  /* background-color: #4b4b4b10; */
+  margin-top: 0.5em;
+}
+
+.admin_button_uploadTestPapers {
+  grid-area: admin_button_uploadTestPapers;
+}
+
+.admin_main {
+  grid-area: admin_main;
+  display: grid;
+  grid-template-rows: 45vh auto;
+  grid-template-areas:
+    "all_students update_students"
+    "all_students grievance_redressal";
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.all_students {
+  grid-area: all_students;
+  border-radius: 0.8em;
+  background: #def5ff;
+}
+
+.admin_main p {
+  background: #00000015;
+  margin: 0;
+  border-radius: 0.8em 0.8em 0 0;
+  text-align: center;
+  height: 2em;
+  color: #4b4b4b;
+  padding-top: 0.5em;
+  font-size: 1vw;
+}
+
+.update_students {
+  grid-area: update_students;
+  border-radius: 0.8em;
+  background: #fffff2;
+}
+
+.a_m_u_s {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "dp stname stschool"
+    "dp stboard stclass"
+    "dp stid stpf"
+    "dp stemail stpass"
+    "a_m_u_s_b a_m_u_s_b a_m_u_s_b";
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.a_m_u_s_dp {
+  grid-area: dp;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  background-color: #ffa3a3;
+  border: #707070 3px solid;
+  width: 150px;
+  height: 150px;
+  border-radius: 100em;
+}
+
+.a_m_u_s input {
+  border-radius: 0.5vw;
+  border: #70707025 1px solid;
+  padding-left: 1em;
+  height: 3.5vh;
+  font-size: 0.8vw;
+}
+
+.a_m_u_s#studentName {
+  grid-area: stname;
+}
+.a_m_u_s#studentSchool {
+  grid-area: stschool;
+}
+.a_m_u_s#studentBoard {
+  grid-area: stboard;
+}
+.a_m_u_s#studentClass {
+  grid-area: stclass;
+}
+.a_m_u_s#studentId {
+  grid-area: stid;
+}
+.a_m_u_s#studentPendingFee {
+  grid-area: stpf;
+}
+.a_m_u_s#studentEmail {
+  grid-area: stemail;
+}
+.a_m_u_s#studentPassword {
+  grid-area: stpass;
+}
+
+.a_m_u_s_buttons {
+  grid-area: a_m_u_s_b;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  padding: 0 1em;
+}
+
+.a_m_u_s_buttons button {
+  border: none;
+  background-color: #55add5;
+  color: #fff;
+  border-radius: 0.6vw;
+  height: 4.5vh;
+  font-size: 0.8vw;
+}
+
+.a_m_u_s_buttons#btnUploadPhoto {
+  grid-area: btnup;
+}
+.a_m_u_s_buttons#btnAdd {
+  grid-area: btnadd;
+}
+.a_m_u_s_buttons#btnUpdate {
+  grid-area: btnupdate;
+}
+.a_m_u_s_buttons#btnDelete {
+  grid-area: btndelete;
+}
+
+.grievance_redressal {
+  grid-area: grievance_redressal;
+  border-radius: 0.8em;
+  background: #fff2f2;
+}
+
+/* Admin page styles end */
 
 header {
   grid-area: header;
@@ -190,12 +430,12 @@ nav a {
   transition: all 0.5s ease;
 }
 
-nav a:hover:not(.active) {
+nav a:hover:not(.active_nav) {
   background-color: white;
   opacity: 1;
 }
 
-nav a:hover:not(.active)::after {
+nav a:hover:not(.active_nav)::after {
   background-color: none;
   transition: background-color 1s ease-out;
 }
@@ -322,7 +562,7 @@ footer {
   grid-area: footer;
   display: grid;
   place-content: center;
-  height: 1.5em;
+  /* height: 1.5em; */
   padding: 0.2em 0;
   width: 100%;
   background: #00000020;
@@ -376,6 +616,10 @@ footer {
     height: 25vh;
     grid-gap: 20px;
     padding: 2em 2em;
+  }
+
+  .login_main .form #errorMessage {
+    margin: -0.3em 0;
   }
 
   .login_button {
