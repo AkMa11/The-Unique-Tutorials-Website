@@ -225,10 +225,10 @@ body {
 .admin_main {
   grid-area: admin_main;
   display: grid;
-  grid-template-rows: 45vh auto;
   grid-template-areas:
     "all_students update_students"
     "all_students grievance_redressal";
+  grid-template-rows: 45vh auto;
   grid-gap: 1em;
   padding: 1em;
 }
@@ -254,17 +254,26 @@ body {
   grid-area: update_students;
   border-radius: 0.8em;
   background: #fffff2;
+  display: grid;
+  grid-template-areas:
+    "u_s_p"
+    "a_m_u_s"
+    "a_m_u_s_b";
+}
+
+.update_students p {
+  grid-area: u_s_p;
 }
 
 .a_m_u_s {
+  grid-area: a_m_u_s;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "dp stname stschool"
     "dp stboard stclass"
     "dp stid stpf"
-    "dp stemail stpass"
-    "a_m_u_s_b a_m_u_s_b a_m_u_s_b";
+    "dp stemail stpass";
   grid-gap: 1em;
   padding: 1em;
 }
@@ -276,8 +285,8 @@ body {
   align-self: center;
   background-color: #ffa3a3;
   border: #707070 3px solid;
-  width: 150px;
-  height: 150px;
+  width: 9.5vw;
+  height: 9.5vw;
   border-radius: 100em;
 }
 
