@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/AkMa11/The-Unique-Tutorials-Website#readme",
   "dependencies": {
+    "fast-crc32c": "^1.0.4",
     "firebase-admin": "^6.0.0",
-    "requirejs": "^2.3.5"
+    "requirejs": "^2.3.5",
+    "uniq": "^1.0.1"
   }
 }
